@@ -1,14 +1,28 @@
 import "../../sass/index.scss";
 
 //import fonts
-import { Neue_Mechanica, Roboto_Mono } from "@/public/assets/fonts";
+import { Space_Grotesk } from "next/font/google";
+
+// If loading a variable font, you don't need to specify the font weight
+const space_grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: {
-    default: "Next & Sanity Boilerplate",
-    template: "%s | Next & Sanity Boilerplate",
+    default: "Clinique Kabala",
+    template: "%s | Clinique Kabala",
   },
-  keywords: ["Next.js", "Sanity.io", "Boilerplate"],
+  keywords: [
+    "Clinique Kabala",
+    "Clinique",
+    "Kabala",
+    "Bamako",
+    "Mali",
+    "Clinique Bamako",
+    "Clinique Mali",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -36,9 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${Neue_Mechanica.variable} ${Roboto_Mono.variable}`}>
-        {children}
-      </body>
+      <body className={space_grotesk.className}>{children}</body>
     </html>
   );
 }
